@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureVPN - Protect Your Privacy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SecureVPN</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero fade-in">
+            <h1>Secure Your Internet Connection</h1>
+            <p>Protect your privacy and browse the web anonymously with our fast and reliable VPN service.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="register.html" class="btn btn-primary">Get Started</a>
+                <a href="login.html" class="btn btn-secondary">Sign In</a>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🔒</div>
+                <h3>Military-Grade Encryption</h3>
+                <p>Your data is protected with AES-256 encryption, the same standard used by governments and banks.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🌍</div>
+                <h3>Global Server Network</h3>
+                <p>Access content from anywhere with our network of servers in 50+ countries worldwide.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">⚡</div>
+                <h3>Lightning Fast Speeds</h3>
+                <p>Experience minimal speed loss with our optimized network infrastructure and unlimited bandwidth.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">👤</div>
+                <h3>No-Logs Policy</h3>
+                <p>We don't track, collect, or store your online activities. Your privacy is our priority.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
